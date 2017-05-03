@@ -1,0 +1,24 @@
+<c3p0-config>
+  
+  <named-config name="c3p0configure"> 
+  	<!-- 数据库连接基本配置 -->
+  	<property name="user">root</property>
+  	<property name="password">root</property>
+  	<property name="driverClass">com.mysql.jdbc.Driver</property>
+  	<!-- 顺便将useSSL配置了，否则会警告 -->
+  	<property name="jdbcUrl">jdbc:mysql://localhost/contacts?useSSL=false</property>
+  
+  	<property name="maxIdleTime">1</property>
+    <property name="acquireIncrement">50</property>
+    <property name="initialPoolSize">300</property>
+    <property name="minPoolSize">50</property>
+    <!-- 个人计算机上mysql最大连接数为200，所以将最大连接池连接设为160 -->
+    <property name="maxPoolSize">1000</property>
+
+ 
+    <property name="maxStatements">20</property> 
+    <property name="maxStatementsPerConnection">20</property>
+
+  </named-config>
+</c3p0-config>
+	
